@@ -1,0 +1,14 @@
+#!/bin/sh
+for i in /usr/java/<%=@jdkFolder%>/bin/* ; do \
+  f=$(basename $i); \
+#  echo $f; \
+  sudo alternatives --install /usr/bin/$f $f $i 20000 ; \
+#  sudo update-alternatives --config $f ; \
+done
+
+cd /etc/alternatives
+sudo ln -sfn /usr/java/<%=@jdkFolder%> java_sdk
+cd /usr/lib/jvm
+sudo ln -sfn /usr/java/<%=@jdkFolder%>/jre jre
+echo $?
+
