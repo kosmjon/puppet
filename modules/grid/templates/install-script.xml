@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<AutomatedInstallation langpack='eng'>
+	<com.izforge.izpack.panels.TargetPanel
+		id='UNKNOWN (com.izforge.izpack.panels.TargetPanel)'>
+		<installpath>/application/volume1/ioncloud-grid</installpath>
+	</com.izforge.izpack.panels.TargetPanel>
+	<com.infor.grid.bootstrap.panels.PortsPanel
+		id='UNKNOWN (com.infor.grid.bootstrap.panels.PortsPanel)' />
+	<com.izforge.izpack.panels.JDKPathPanel
+		id='UNKNOWN (com.izforge.izpack.panels.JDKPathPanel)'>
+		<JDKPath>/usr/java/default</JDKPath>
+	</com.izforge.izpack.panels.JDKPathPanel>
+	<com.izforge.izpack.panels.InstallPanel
+		id='UNKNOWN (com.izforge.izpack.panels.InstallPanel)' />
+	<com.izforge.izpack.panels.UserInputPanel
+		id='Grid'>
+		<userInput>
+			<entry key='gridName' value='ioncloud-grid' />
+			<entry key='url'
+				value='jdbc:s3://<%=@S3Bucket-DomainName%>/grid-configuration' />
+			<entry key='schema' value='' />
+			<entry key='user' value='iam-role' />
+			<entry key='pwd' value='' />
+		</userInput>
+	</com.izforge.izpack.panels.UserInputPanel>
+	<com.izforge.izpack.panels.UserInputPanel
+		id='Host'>
+		<userInput>
+			<entry key='hostName' value='az1' />
+			<entry key='host.address' value='<%=@ASNetworkInterfaceAZ1Address%>' />
+			<entry key='agent.port' value='42000' />
+			<entry key='registry.port' value='42001' />
+			<entry key='adminrouter.address' value='<%=@ASNetworkInterfaceAZ1Address%>' />
+			<entry key='adminrouter.port' value='42002' />
+			<entry key='adminrouter.http.port' value='42003' />
+			<entry key='adminrouter.https.port' value='42004' />
+			<entry key='adminrouter.webstart.port' value='42005' />
+			<entry key='defaultrouter.wildcard' value='true' />
+			<entry key='defaultrouter.address' value='<%=@ASNetworkInterfaceAZ1Address%>' />
+			<entry key='defaultrouter.http.port' value='42006' />
+			<entry key='defaultrouter.https.port' value='42007' />
+		</userInput>
+	</com.izforge.izpack.panels.UserInputPanel>
+	<com.izforge.izpack.panels.UserInputPanel
+		id='Service'>
+		<userInput>
+			<entry key='service.user' value='ec2-user' />
+			<entry key='service.group' value='ec2-user' />
+		</userInput>
+	</com.izforge.izpack.panels.UserInputPanel>
+	<com.izforge.izpack.panels.ProcessPanel
+		id='UNKNOWN (com.izforge.izpack.panels.ProcessPanel)' />
+	<com.izforge.izpack.panels.FinishPanel
+		id='UNKNOWN (com.izforge.izpack.panels.FinishPanel)' />
+</AutomatedInstallation>
