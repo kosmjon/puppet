@@ -23,6 +23,7 @@ class yum {
   # $releasever is a yum variable and is set to 'latest' on AWS Linux replace with '6'
   exec {"adjust glusterfs repo":  
     command => "/bin/sed 's/-\$releasever/-6/g' </etc/yum.repos.d/glusterfs-epel.repo.unedited >/etc/yum.repos.d/glusterfs-epel.repo",
+    # needs onlyif
   }
 }
 

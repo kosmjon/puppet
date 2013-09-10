@@ -11,7 +11,7 @@ define wget::fetch ($source, $destination) {
 
 define download ($uri, $timeout = 300) {
   exec { "download $uri":
-    command => "wget -q '$uri' -O $name",
+    command => "/usr/bin/wget -q '$uri' -O $name",
     creates => $name,
     timeout => $timeout,
     require => Package["wget"],
