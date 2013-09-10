@@ -1,0 +1,13 @@
+#!/usr/bin/expect -df
+spawn /usr/NX/bin/nxserver --useradd ec2-user
+expect "Password:"
+send "!ioncloud\r"
+expect "Confirm password:"
+send "!ioncloud\r"
+expect "999 Bye."
+expect
+
+
+
+
+

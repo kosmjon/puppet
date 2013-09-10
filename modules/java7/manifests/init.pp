@@ -1,10 +1,10 @@
-class java7::props {
+class java7::params {
   $jdkVerS = '7u25'
   $jdkVerL = '7u25-b15'
   $jdkFolder  = 'jdk1.7.0_25'
 }
 
-class java7 inherits java7::props {
+class java7 inherits java7::params {
   
   file { "oracle-java.sh":
     path    => "/etc/profile.d/oracle-java.sh",
@@ -35,7 +35,7 @@ class java7 inherits java7::props {
   }
 }
 
-class java7::remove inherits java7::props {
+class java7::remove inherits java7::params {
   exec {"remove java":
     command => "/usr/bin/rpm -e jdk-1.7.0_25-fcs.x86_64",
     onlyif => ["/usr/bin/test -f /usr/java/${jdkFolder}"],
