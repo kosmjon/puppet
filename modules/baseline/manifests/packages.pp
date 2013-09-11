@@ -10,11 +10,10 @@ class baseline::packages {
     "xorg-x11-xauth.${architecture}",
     "xorg-x11-server-utils.${architecture}",
     'xfsprogs',
-    's3cmd',
     'expect',
     'git',
 	]
 
-	package { $packages: ensure => installed }
+  package { $packages: ensure => installed }
 }
 
