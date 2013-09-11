@@ -1,0 +1,23 @@
+# Service-specific configuration file for tomcat6. This will be sourced by
+# the SysV init script after the global configuration file
+# /etc/tomcat6/tomcat6.conf, thus allowing values to be overridden in
+# a per-service manner.
+#
+# NEVER change the init script itself. To change values for all services make
+# your changes in /etc/tomcat6/tomcat6.conf
+
+# What user should run tomcat
+TOMCAT_USER="<%= tomcat_user %>"
+
+# Time to wait in seconds, before killing process
+SHUTDOWN_WAIT="<%= shutdown_wait %>"
+
+# Whether to annoy the user with "attempting to shut down" messages or not
+SHUTDOWN_VERBOSE="<%= shutdown_verbose %>"
+
+# Connector port is 8080 for this tomcat6 instance
+CONNECTOR_PORT="<%= connector_port %>"
+
+# Additional Java options.
+JAVA_OPTS="<%= java_opts %>"
+
