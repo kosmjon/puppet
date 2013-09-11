@@ -1,5 +1,5 @@
 [default]
-access_key = ${HostAccessID}
+access_key = $s3cmdAccessKey
 
 bucket_location = US
 cloudfront_host = cloudfront.amazonaws.com
@@ -29,7 +29,7 @@ proxy_port = 0
 recursive = False
 recv_chunk = 4096
 reduced_redundancy = False
-secret_key = ${HostSecretAccessKey}
+secret_key = $s3cmdSecretKey
 
 send_chunk = 4096
 simpledb_host = sdb.amazonaws.com
