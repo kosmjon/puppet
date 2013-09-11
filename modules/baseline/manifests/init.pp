@@ -1,4 +1,6 @@
 class baseline {  
+    Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
+  
     Service {
         hasstatus => true,
         hasrestart => true
@@ -12,4 +14,5 @@ class baseline {
 
     include yum
     include wget
+    include baseline::packages
 }
